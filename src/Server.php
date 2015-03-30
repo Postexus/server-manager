@@ -4,11 +4,22 @@ namespace serverManager\src;
 
 class Server
 {
+    /** @var int */
+    private $id = 0;
+
     /**
      * @return int
      */
     public function getId()
     {
-        return 0;
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
     }
 }

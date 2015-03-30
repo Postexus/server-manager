@@ -13,4 +13,12 @@ class ServerTest extends \PHPUnit_Framework_TestCase
 
         $this->assertInternalType('integer', $Server->getId());
     }
+
+    public function test_getId_returnsIdSetBySetId()
+    {
+        $Server = new Server();
+        $Server->setId(5);
+
+        $this->assertEquals(5, $Server->getId());
+    }
 }
