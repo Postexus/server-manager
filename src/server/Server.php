@@ -1,6 +1,6 @@
 <?php
 
-namespace serverManager\src;
+namespace serverManager\src\server;
 
 class Server
 {

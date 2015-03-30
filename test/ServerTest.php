@@ -3,7 +3,7 @@
 namespace serverManager\test;
 
 
-use serverManager\src\Server;
+use serverManager\src\server\Server;
 
 class ServerTest extends \PHPUnit_Framework_TestCase
 {

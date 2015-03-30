@@ -3,8 +3,8 @@
 namespace serverManager\test;
 
 
-use serverManager\src\Server;
-use serverManager\src\ServerApi;
+use serverManager\src\server\Server;
+use serverManager\src\server\ServerApi;
 
 class ServerApiTest extends \PHPUnit_Framework_TestCase
 {
