@@ -6,6 +6,11 @@ namespace serverManager\test;
 use serverManager\src\server\ServerApi;
 use serverManager\src\server\ServerRepository;
 
+class PdoMock extends \PDO
+{
+    public function __construct() {}
+}
+
 /**
  * @backupGlobals disabled
  * @backupStaticAttributes disabled
@@ -17,8 +22,8 @@ class ServerApiTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $DB = $this->getMockBuilder('PDO')
-            ->disableOriginalConstructor()
+        $DB = $this->getMockBuilder('PdoMock')
+//            ->disableOriginalConstructor()
             ->getMock();
 
         $this->ServerApi = new ServerApi(new ServerRepository($DB));
