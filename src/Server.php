@@ -6,6 +6,8 @@ class Server
 {
     /** @var int */
     private $id = 0;
+    /** @var string */
+    private $hostName = '';
 
     /**
      * @return int
@@ -28,6 +30,14 @@ class Server
      */
     public function getHostName()
     {
-        return "";
+        return $this->hostName;
+    }
+
+    /**
+     * @param string $hostName
+     */
+    public function setHostName($hostName)
+    {
+        $this->hostName = $hostName;
     }
 }
