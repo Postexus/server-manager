@@ -10,8 +10,9 @@ class ServerRepository
 
     /**
      * @param \PDO $DB
+     * @todo Introduce type hinting for database once a suitable test solution has been found
      */
-    public function __construct(\PDO $DB)
+    public function __construct($DB)
     {
         $this->DB = $DB;
     }
