@@ -6,6 +6,10 @@ namespace serverManager\test;
 use serverManager\src\server\ServerApi;
 use serverManager\src\server\ServerRepository;
 
+/**
+ * @backupGlobals disabled
+ * @backupStaticAttributes disabled
+ */
 class ServerRepositoryTest extends \PHPUnit_Framework_TestCase
 {
     public function test_createServer_returnsServerObject()
