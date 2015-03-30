@@ -12,7 +12,7 @@ class ServerApiTest extends \PHPUnit_Framework_TestCase
     {
         $ServerApi = new ServerApi();
 
-        $this->assertInstanceOf('serverManager\\src\\Server', $ServerApi->createServer());
+        $this->assertInstanceOf('serverManager\\src\\server\\Server', $ServerApi->createServer());
     }
 
     public function test_getServerAsArray_returnsArray_whenCalledWithServer()
