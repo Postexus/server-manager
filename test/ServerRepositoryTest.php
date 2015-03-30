@@ -12,6 +12,9 @@ use serverManager\src\server\ServerRepository;
  */
 class ServerRepositoryTest extends \PHPUnit_Framework_TestCase
 {
+    /**
+     * @backupGlobals disabled
+     */
     public function test_createServer_returnsServerObject()
     {
         $DB = $this->getMockBuilder('\PDO')
