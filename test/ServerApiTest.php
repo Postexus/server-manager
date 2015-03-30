@@ -5,20 +5,26 @@ namespace serverManager\test;
 
 use serverManager\src\server\Server;
 use serverManager\src\server\ServerApi;
+use serverManager\src\server\ServerRepository;
 
 class ServerApiTest extends \PHPUnit_Framework_TestCase
 {
+    /** @var ServerApi */
+    private $ServerApi;
+
+    public function setUp()
+    {
+        $this->ServerApi = new ServerApi(new ServerRepository());
+    }
+
     public function test_createServer_returnsServerObject()
     {
-        $ServerApi = new ServerApi();
-
-        $this->assertInstanceOf('serverManager\\src\\server\\Server', $ServerApi->createServer());
+        $this->assertInstanceOf('serverManager\\src\\server\\Server', $this->ServerApi->createServer());
     }
 
     public function test_getServerAsArray_returnsArray_whenCalledWithServer()
     {
-        $ServerApi = new ServerApi();
-        $Server = new Server();
+        $Server = $this->ServerApi->createServer();
         $Server->setId(5);
         $Server->setHostName('alpha.example.net');
 
@@ -27,6 +33,6 @@ class ServerApiTest extends \PHPUnit_Framework_TestCase
             'hostName' => 'alpha.example.net'
         ];
 
-        $this->assertEquals($expectedArray, $ServerApi->getServerAsArray($Server));
+        $this->assertEquals($expectedArray, $this->ServerApi->getServerAsArray($Server));
     }
 }

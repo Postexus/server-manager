@@ -5,12 +5,20 @@ namespace serverManager\src\server;
 
 class ServerApi
 {
+    /** @var ServerRepository */
+    private $ServerRepository;
+
+    public function __construct(ServerRepository $ServerRepository)
+    {
+        $this->ServerRepository = $ServerRepository;
+    }
+
     /**
      * @return Server
      */
     public function createServer()
     {
-        return new Server();
+        return $this->ServerRepository->createServer();
     }
 
     /**
