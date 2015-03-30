@@ -3,7 +3,6 @@
 namespace serverManager\test;
 
 
-use serverManager\src\server\Server;
 use serverManager\src\server\ServerApi;
 use serverManager\src\server\ServerRepository;
 
