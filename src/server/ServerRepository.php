@@ -30,6 +30,10 @@ class ServerRepository
      */
     public function saveServer(Server $Server)
     {
-        return true;
+        $Statement = $this->DB->prepare("INSERT INTO servers (id, host_name) VALUES (:id, :hostname)");
+        $Statement->bindValue(":id", $Server->getId());
+        $Statement->bindValue(":host_name", $Server->getHostName());
+
+        return $Statement->execute();
     }
 }
