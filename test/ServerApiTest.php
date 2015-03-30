@@ -6,11 +6,6 @@ namespace serverManager\test;
 use serverManager\src\server\ServerApi;
 use serverManager\src\server\ServerRepository;
 
-class PdoMock extends \PDO
-{
-    public function __construct() {}
-}
-
 /**
  * @backupGlobals disabled
  * @backupStaticAttributes disabled
