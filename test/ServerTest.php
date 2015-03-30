@@ -21,4 +21,11 @@ class ServerTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals(5, $Server->getId());
     }
+
+    public function test_getHostName_returnsString()
+    {
+        $Server = new Server();
+
+        $this->assertInternalType('string', $Server->getHostName());
+    }
 }

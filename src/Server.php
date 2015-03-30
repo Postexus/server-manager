@@ -22,4 +22,12 @@ class Server
     {
         $this->id = $id;
     }
+
+    /**
+     * @return string
+     */
+    public function getHostName()
+    {
+        return "";
+    }
 }
