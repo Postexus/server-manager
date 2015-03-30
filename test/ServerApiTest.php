@@ -14,7 +14,11 @@ class ServerApiTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->ServerApi = new ServerApi(new ServerRepository());
+        $DB = $this->getMockBuilder('PDO')
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $this->ServerApi = new ServerApi(new ServerRepository($DB));
     }
 
     public function test_createServer_returnsServerObject()
