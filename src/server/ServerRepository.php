@@ -3,16 +3,18 @@
 namespace serverManager\src\server;
 
 
+use serverManager\src\core\Database;
+
 class ServerRepository
 {
-    /** @var \PDO */
+    /** @var Database */
     private $DB;
 
     /**
-     * @param \PDO $DB
+     * @param Database $DB
      * @todo Introduce type hinting for database once a suitable test solution has been found
      */
-    public function __construct($DB)
+    public function __construct(Database $DB)
     {
         $this->DB = $DB;
     }

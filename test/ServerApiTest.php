@@ -17,7 +17,7 @@ class ServerApiTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $DB = $this->getMockBuilder('PdoMock')
+        $DB = $this->getMockBuilder('serverManager\\src\\core\\Database')
 //            ->disableOriginalConstructor()
             ->getMock();
 

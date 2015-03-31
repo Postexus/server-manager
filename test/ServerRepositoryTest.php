@@ -22,7 +22,7 @@ class ServerRepositoryTest extends \PHPUnit_Framework_TestCase
      */
     public function test_createServer_returnsServerObject()
     {
-        $DB = $this->getMockBuilder('PdoMock')
+        $DB = $this->getMockBuilder('serverManager\\src\\core\\Database')
 //            ->disableOriginalConstructor()
             ->getMock();
 
@@ -46,7 +46,7 @@ class ServerRepositoryTest extends \PHPUnit_Framework_TestCase
             ->method('execute')
             ->willReturn(true);
 
-        $DB = $this->getMockBuilder('PdoMock')
+        $DB = $this->getMockBuilder('serverManager\\src\\core\\Database')
 //            ->disableOriginalConstructor()
             ->setMethods(['prepare'])
             ->getMock();
